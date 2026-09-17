@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Palmeiras — Títulos</title>
+  <style>
+    :root{
+      --verde:#006437;
+      --verde-escuro:#003d24;
+      --verde-claro:#0b8f55;
+      --dourado:#d6ad45;
+      --branco:#fff;
+      --cinza:#f3f5f4;
+      --texto:#153027;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--cinza);
+      color:var(--texto);
+    }
+    .site{
+      width:min(1100px,94%);
+      margin:24px auto;
+      background:#fff;
+      border:3px solid var(--verde-escuro);
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 12px 35px rgba(0,0,0,.12);
+    }
+    header{
+      background:linear-gradient(135deg,var(--verde-escuro),var(--verde));
+      color:#fff;
+      padding:28px 34px 22px;
+      text-align:center;
+      position:relative;
+    }
+    header:after{
+      content:"";
+      position:absolute;left:0;right:0;bottom:0;height:5px;
+      background:var(--dourado);
+    }
+    .crest{
+      width:76px;height:76px;
+      margin:0 auto 12px;
+      border:3px solid #fff;
+      border-radius:50%;
+      display:grid;place-items:center;
+      font-weight:900;font-size:13px;
+      letter-spacing:1px;
+      background:rgba(255,255,255,.08);
+    }
+    h1{font-size:clamp(28px,5vw,48px);letter-spacing:1px}
+    header p{margin-top:8px;opacity:.9;font-size:16px}
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+      padding:28px 34px;
+      background:#fff;
+    }
+    .stat{
+      border:2px solid var(--verde);
+      border-radius:16px;
+      min-height:130px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      transition:.2s;
+    }
+    .stat:hover{transform:translateY(-4px);box-shadow:0 8px 18px rgba(0,70,40,.12)}
+    .medal{
+      width:58px;height:58px;border-radius:50%;
+      border:4px solid var(--dourado);
+      display:grid;place-items:center;
+      color:var(--verde);
+      font-weight:900;font-size:20px;
+      margin-bottom:8px;
+    }
+    .stat strong{font-size:16px}
+    .stat span{font-size:13px;color:#65766e;margin-top:3px}
+
+    main{padding:8px 34px 34px}
+    .section-title{text-align:center;margin:14px 0 22px}
+    .section-title h2{color:var(--verde-escuro);font-size:30px}
+    .section-title p{margin-top:6px;color:#65766e}
+
+    .cards{display:grid;gap:24px}
+    .card{
+      min-height:245px;
+      border:2px solid #d6dfda;
+      border-left:8px solid var(--verde);
+      border-radius:16px;
+      padding:22px;
+      display:grid;
+      grid-template-columns:170px 1fr;
+      gap:24px;
+      align-items:center;
+      background:linear-gradient(100deg,#fbfdfc,#fff);
+    }
+    .trophy-box{
+      height:170px;
+      border-radius:14px;
+      background:var(--verde);
+      color:#fff;
+      display:grid;
+      place-items:center;
+      text-align:center;
+      box-shadow:inset 0 0 0 4px rgba(255,255,255,.13);
+    }
+    .trophy{
+      font-size:64px;
+      line-height:1;
+      filter:drop-shadow(0 4px 2px rgba(0,0,0,.2));
+    }
+    .trophy-box small{display:block;margin-top:8px;font-weight:bold;color:#f7e7a8}
+    .card h3{font-size:25px;color:var(--verde-escuro);margin-bottom:10px}
+    .card p{line-height:1.55;color:#53655d;margin-bottom:14px}
+    .years{
+      display:flex;flex-wrap:wrap;gap:7px;
+    }
+    .year{
+      background:#e8f3ed;
+      color:var(--verde-escuro);
+      border-radius:20px;
+      padding:7px 10px;
+      font-size:13px;
+      font-weight:bold;
+    }
+    .gold{background:#fff4cf;color:#755d18}
+
+    .history{
+      margin-top:24px;
+      padding:24px;
+      background:var(--verde-escuro);
+      color:#fff;
+      border-radius:16px;
+      text-align:center;
+    }
+    .history h3{font-size:24px;margin-bottom:8px}
+    .history p{line-height:1.6;opacity:.9}
+
+    footer{
+      border-top:2px solid #dfe7e3;
+      padding:20px 34px;
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+      font-size:13px;
+      color:#64756d;
+      background:#fafcfb;
+    }
+    footer strong{color:var(--verde-escuro)}
+
+    @media(max-width:760px){
+      .stats{grid-template-columns:repeat(2,1fr);padding:22px}
+      main{padding:8px 22px 26px}
+      .card{grid-template-columns:1fr;text-align:center}
+      .trophy-box{height:130px}
+      .years{justify-content:center}
+      .site{margin:10px auto}
+    }
+    @media(max-width:430px){
+      .stats{grid-template-columns:1fr 1fr;gap:10px}
+      .stat{min-height:112px}
+      .medal{width:48px;height:48px}
+      header{padding:24px 18px 20px}
+      footer{padding:18px 22px}
+    }
+  </style>
+</head>
+<body>
+  <div class="site">
+    <header>
+      <div class="crest">SEP<br>1914</div>
+      <h1>Sociedade Esportiva Palmeiras</h1>
+      <p>Uma história construída com grandes conquistas</p>
+    </header>
+
+    <section class="stats">
+      <div class="stat">
+        <div class="medal">12</div>
+        <strong>Brasileiros</strong>
+        <span>Maior campeão nacional</span>
+      </div>
+      <div class="stat">
+        <div class="medal">3</div>
+        <strong>Libertadores</strong>
+        <span>2020 • 2021 + 1999</span>
+      </div>
+      <div class="stat">
+        <div class="medal">4</div>
+        <strong>Copa do Brasil</strong>
+        <span>1998 • 2012 • 2015 • 2020</span>
+      </div>
+      <div class="stat">
+        <div class="medal">27</div>
+        <strong>Paulistas</strong>
+        <span>Último: 2026</span>
+      </div>
+    </section>
+
+    <main>
+      <div class="section-title">
+        <h2>Principais títulos</h2>
+        <p>Confira algumas das maiores conquistas do Verdão.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="trophy-box">
+            <div>
+              <div class="trophy">🏆</div>
+              <small>TÍTULOS NACIONAIS</small>
+            </div>
+          </div>
+          <div>
+            <h3>Domínio no Brasil</h3>
+            <p>
+              O Palmeiras soma <strong>12 Campeonatos Brasileiros</strong> e
+              <strong>4 Copas do Brasil</strong>, além da Copa dos Campeões de 2000.
+              Entre os Brasileiros estão as conquistas de 1960, 1967, 1969, 1972,
+              1973, 1993, 1994, 2016, 2018, 2022 e 2023, conforme o registro oficial.
+            </p>
+            <div class="years">
+              <span class="year">Brasileirão: 12</span>
+              <span class="year">Copa do Brasil: 4</span>
+              <span class="year">Copa dos Campeões: 1</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="trophy-box">
+            <div>
+              <div class="trophy">🏆</div>
+              <small>TÍTULOS INTERNACIONAIS</small>
+            </div>
+          </div>
+          <div>
+            <h3>Conquistas internacionais</h3>
+            <p>
+              Na América do Sul, o Palmeiras conquistou a <strong>Libertadores três vezes</strong>:
+              1999, 2020 e 2021. O clube também possui a Recopa Sul-Americana de 2022
+              e a histórica Copa Rio de 1951, reconhecida pelo clube como seu primeiro
+              título internacional.
+            </p>
+            <div class="years">
+              <span class="year gold">Libertadores: 3</span>
+              <span class="year gold">Recopa: 1</span>
+              <span class="year gold">Copa Rio: 1951</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <section class="history">
+        <h3>Uma camisa, muitas histórias</h3>
+        <p>
+          Do Palestra Italia ao Palmeiras, o clube construiu uma das trajetórias
+          mais marcantes do futebol brasileiro. Em 2026, conquistou seu
+          <strong>27º Campeonato Paulista</strong>, ampliando sua coleção de troféus.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <div><strong>PALMEIRAS</strong> • História e títulos</div>
+      <div>Dados principais baseados no registro oficial do clube • 2026</div>
+    </footer>
+  </div>
+</body>
+</html>
